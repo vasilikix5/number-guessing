@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number Guessing Game</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>Guess a number from 1 to 100</header>
+      <p>You have only 10 guesses</p>
+      <div class="input-field">
+        <input type="text" inputmode="numeric" maxlength="3" autocomplete="off"  />
+        <button id="guessBtn">GUESS</button>
+      </div>
+      <p class="guess"></p>
+      <p><span class="chances">10</span> guesses left</p>
+      <p class="guessed"></p>
+    </div>
+
+
+    <div class="overlay" id="overlay" hidden>
+      <div class="result-box" role="dialog" aria-modal="true" aria-labelledby="resultTitle">
+        <h2 id="resultTitle"></h2>
+        <p id="resultText"></p>
+        <button id="restartBtn">Try again</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
