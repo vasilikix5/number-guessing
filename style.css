@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  object-fit: cover;
+  background: linear-gradient(135deg, #1b2a5c, #3a1c63);
+}
+
+.wrapper {
+  padding: 30px 40px;
+  width: 50vw;
+  border-radius: 12px;
+  background: darkorange; 
+  text-align: center;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+.wrapper header {
+  font-size: 25px;
+  font-weight: 500;
+  color: #541d5a; 
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-shadow: 1px 1px 0px rgba(0,0,0,0.5);
+}
+.wrapper p {
+  font-size: 18px;
+  color: #2c0533; 
+}
+
+.wrapper .guess {
+  min-height: 1.6em;
+  margin-bottom: 10px;
+  font-size: 22px;
+  font-weight: 500;
+}
+.wrapper .input-field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin: 25px 0 15px;
+}
+.input-field input,
+.input-field button {
+  height: 50px;
+  width: 320px;
+  outline: none;
+  padding: 0 20px;
+  border-radius: 8px;
+  font-size: 18px;
+}
+.input-field input {
+  text-align: center;
+  color: #2b272d;
+  background-color: rgba(228, 199, 227, 0.8);
+  width: 320px;
+  font-size: 22px;
+  border: 1px solid #aaa;
+  box-shadow: 0.5px 0.5px 1px black;
+}
+
+.input-field input:hover {
+  text-align: center;
+  color: #2b272d;
+  background-color: rgba(228, 199, 227, 0.5);
+  width: 320px;
+  box-shadow: 0.5px 0.5px 1px black;
+  border: 1px solid #000000;
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  display: none;
+}
+.input-field input:disabled {
+  cursor: not-allowed;
+}
+.input-field button {
+  border: none;
+  background: #8e26a0;
+  color: #f0d8f1;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.input-field button:hover {
+  border: none;
+  color: #711c81;
+  background-color: #e2b9e3;
+  box-shadow: 1px 1px 1px black;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.input-field button:active {
+  transform: scale(0.97);
+}
+
+.input-field input,
+.input-field button {
+  max-width: 100%;
+}
+
+.input-field button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.wrapper .guessed {
+  font-size: 16px;
+  word-break: break-word;
+}
+
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.65);
+  padding: 20px;
+}
+
+.overlay[hidden] {
+  display: none;
+}
+
+.result-box {
+  width: 100%;
+  max-width: 380px;
+  padding: 35px 30px;
+  border-radius: 16px;
+  text-align: center;
+  background: #fff;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  animation: pop 0.25s ease-out;
+}
+
+.result-box h2 {
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+.result-box p {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+.result-box button {
+  height: 50px;
+  padding: 0 35px;
+  border: none;
+  border-radius: 8px;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.result-box button:hover {
+  filter: brightness(1.15);
+}
+
+.result-box.won {
+  border-top: 8px solid palevioletred;
+}
+.result-box.won h2 {
+  color: #1e9e4a;
+}
+.result-box.won button {
+  background: #1e9e4a;
+}
+
+.result-box.lost {
+  border-top: 8px solid palevioletred;
+}
+.result-box.lost h2 {
+  color: #DE0611;
+}
+.result-box.lost button {
+  background: #DE0611;
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+@media screen and (max-width:600px) {
+.wrapper {
+    padding: 30px 40px;
+    width: auto;
+    border-radius: 12px;
+    background: #f0def5;
+    text-align: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+  }
+}
